@@ -49,7 +49,7 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Installation
 
-We used the VS Code software to edit code, git to pull the starter code to our local machines and then git again to push our final versions to GitHub.  
+I used the VS Code software to edit code, git to pull the starter code to our local machines and then git again to push our final versions to GitHub.  
 
 ## Usage
 
@@ -58,7 +58,7 @@ https://github.com/abrownstein2022/Mod3JSPWGen.git
 
 The following image shows the web application's appearance and functionality:
     
-![website-image](develop/03-javascript-homework-demo.png)
+![website-image](Develop/03-javascript-homework-demo.png)
     
 
 ## Credits
