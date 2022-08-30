@@ -105,16 +105,31 @@ if (!bolInclLC && !bolInclUC && !bolInclNum && !bolInclSpec) {
     isOK = true;  //now know ok to run generator below  
 }
 
-// const txtAlphaUC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// const txtAlphaLC = "abcdefghijklmnopqrstuvwxyz";
-// const txtNumbers = "0123456789";
-// const txtSpecial = "!@#$%^&*()_+~\\`|}{[]:;?><,./-=";
-
 // Passed all validations so display generated password
  if (isOK){ 
   //generate the password before writing it
+   let finalString = "";  //now figure out the string set to use from the 4 constant choices based on boolean values
+   if (bolInclLC) {
+    finalString = txtAlphaLC;
+   }    
+   if (bolInclUC) {
+    finalString += txtAlphaUC;
+   }
+   if (bolInclNum) {
+    finalString += txtNumbers;
+   }
+   if (bolInclSpec) {
+    finalString += txtSpecial;
+   } 
+
+   for (let i = 1; i <= pwlen; i++) {
+    var char = Math.floor(Math.random()
+                * str.length + 1);
+      
+    pwText += str.charAt(char)
+ }
   
-  
+return pwText;
 
 
   writePassword() + "\nThank you for using my password generator!"; 
