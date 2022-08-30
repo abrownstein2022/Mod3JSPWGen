@@ -8,43 +8,10 @@ let bolInclUC = false;   //true/false - if users wants pw to contain uppercase l
 let bolInclNum = false;  //true/false - if users wants pw to contain numbers
 let bolInclSpec = false; //true/false - if users wants pw to contain special characters
 
-const txtAlphaLC="abcdefghijklmnopqrstuvwxyz";
-const txtAlphaUC="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const txtNumbers="0123456789";
-// const txtSpec=' !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~';
-// Space	U+0020
-// !	Exclamation	U+0021
-// ”	Double quote	U+0022
-// #	Number sign (hash)	U+0023
-// $	Dollar sign	U+0024
-// %	Percent	U+0025
-// &	Ampersand	U+0026
-// ’	Single quote	U+0027
-// (	Left parenthesis	U+0028
-// )	Right parenthesis	U+0029
-// *	Asterisk	U+002A
-// +	Plus	U+002B
-// ,	Comma	U+002C
-// -	Minus	U+002D
-// .	Full stop	U+002E
-// /	Slash	U+002F
-// :	Colon	U+003A
-// ;	Semicolon	U+003B
-// <	Less than	U+003C
-// =	Equal sign	U+003D
-// >	Greater than	U+003E
-// ?	Question mark	U+003F
-// @	At sign	U+0040
-// [	Left bracket	U+005B
-// \	Backslash	U+005C
-// ]	Right bracket	U+005D
-// ^	Caret	U+005E
-// _	Underscore	U+005F
-// `	Grave accent (backtick)	U+0060
-// {	Left brace	U+007B
-// |	Vertical bar	U+007C
-// }	Right brace	U+007D
-// ~
+const txtAlphaUC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const txtAlphaLC = "abcdefghijklmnopqrstuvwxyz";
+const txtNumbers = "0123456789";
+const txtSpecial = "!@#$%^&*()_+~\\`|}{[]:;?><,./-=";
 
 
 var generatePassword = function() {
@@ -138,9 +105,18 @@ if (!bolInclLC && !bolInclUC && !bolInclNum && !bolInclSpec) {
     isOK = true;  //now know ok to run generator below  
 }
 
+// const txtAlphaUC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// const txtAlphaLC = "abcdefghijklmnopqrstuvwxyz";
+// const txtNumbers = "0123456789";
+// const txtSpecial = "!@#$%^&*()_+~\\`|}{[]:;?><,./-=";
 
 // Passed all validations so display generated password
  if (isOK){ 
+  //generate the password before writing it
+  
+  
+
+
   writePassword() + "\nThank you for using my password generator!"; 
  } else {
   return;
@@ -148,7 +124,6 @@ if (!bolInclLC && !bolInclUC && !bolInclNum && !bolInclSpec) {
 
 };  //end to var genPassword = function() at top of code
 
-generatePassword();
 //end Alexis code
 
 //below is included starter code
