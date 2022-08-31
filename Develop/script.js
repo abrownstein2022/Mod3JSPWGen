@@ -124,9 +124,9 @@ if (!bolInclLC && !bolInclUC && !bolInclNum && !bolInclSpec) {
 
    for (let i = 1; i <= pwlen; i++) {
     var char = Math.floor(Math.random()
-                * str.length + 1);
+                * finalString.length + 1);
       
-    pwText += str.charAt(char)
+    pwText += finalString.charAt(char)
  }
   
 return pwText;
