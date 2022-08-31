@@ -122,17 +122,17 @@ if (!bolInclLC && !bolInclUC && !bolInclNum && !bolInclSpec) {
     finalString += txtSpecial;
    } 
 
-   for (let i = 1; i <= pwlen; i++) {
-    var char = Math.floor(Math.random()
-                * finalString.length + 1);
-      
+   for (let i = 1; i <= pwLen; i++) {
+    // console.log("this is for loop" + i);
+    var char = Math.floor(Math.random() * finalString.length + 1);
+    // console.log(char);
+    // console.log(finalString);
     pwText += finalString.charAt(char)
+    // console.log(pwText);
  }
-  
-return pwText;
+  // console.log(pwText);
+ return pwText;
 
-
-  writePassword() + "\nThank you for using my password generator!"; 
  } else {
   return;
  }
@@ -148,7 +148,9 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  console.log(password);
+  var passwordText = document.querySelector("#password") 
+  //+ "\nThank you for using my password generator!";
 
   passwordText.value = password;
 
