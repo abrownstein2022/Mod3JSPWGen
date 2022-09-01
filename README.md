@@ -58,7 +58,7 @@ https://abrownstein2022.github.io/Mod3JSPWGen/
 
 The following image shows the web application's appearance and functionality:
     
-![website-image](Develop/03-javascript-homework-demo.png)
+![website-image](assets/images/03-javascript-homework-demo.png)
     
 
 ## Credits
