@@ -1,20 +1,22 @@
 // Challenge 3 JavaScript Password Generator
 //Alexis Brownstein 8/28/22  NOTE to self: JS is case-sensitive.  Watch how you spell variables, functions, etc.
 
-let pwText = ""; //initialize for test purposes. Will clear out when working properly.
-let isOK = false; //only call password generator if all criteria ok and set isOK to true
-let bolInclLC = false;   //true/false - if users wants pw to contain lowercase letters
-let bolInclUC = false;   //true/false - if users wants pw to contain uppercase letters
-let bolInclNum = false;  //true/false - if users wants pw to contain numbers
-let bolInclSpec = false; //true/false - if users wants pw to contain special characters
-
-const txtAlphaUC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const txtAlphaLC = "abcdefghijklmnopqrstuvwxyz";
-const txtNumbers = "0123456789";
-const txtSpecial = "!@#$%^&*()_+~\\`|}{[]:;?><,./-=";
-
-
 var generatePassword = function() {
+//moved let statements from above to fix scope issue so vars are re-initialized if generate button pressed again without refresh
+  let pwText = ""; 
+  let isOK = false; //only call password generator if all criteria ok and set isOK to true
+  let bolInclLC = false;   //true/false - if users wants pw to contain lowercase letters
+  let bolInclUC = false;   //true/false - if users wants pw to contain uppercase letters
+  let bolInclNum = false;  //true/false - if users wants pw to contain numbers
+  let bolInclSpec = false; //true/false - if users wants pw to contain special characters
+  
+  //use constants to hold string values for each char type user can indicate they want to use
+  const txtAlphaUC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const txtAlphaLC = "abcdefghijklmnopqrstuvwxyz";
+  const txtNumbers = "0123456789";
+  const txtSpecial = "!@#$%^&*()_+~\\`|}{[]:;?><,./-=";
+  
+
 // Ask user to enter password length
 let pwLen = window.prompt("Please enter desired password length between 8 and 128");
  // window.alert(pwLen);
@@ -38,8 +40,12 @@ if (!txtLC) {
   window.alert("You pressed cancel.  Exiting function.")
   return;
 }
-let result = txtLC.toUpperCase();  //convert to uppercase and check for that
+/*Note:  I did not use Confirm here because confirm only offers OK and Cancel as options.  I thought
+that was more awkward than y/n.
+*/
+let result = txtLC.toUpperCase();  //convert to uppercase so Y/n and N/n will both work as user input
 //window.alert(result);
+//user must enter Y/n or N/n 
 if (result != "Y" && result != "N") {
   window.alert("You must enter y or n");
   return;
@@ -97,7 +103,7 @@ if (result4 != "Y" && result4 != "N") {
   }
 }
 
-//User must say yes at least one character type
+//User must say yes to at least one character type
 if (!bolInclLC && !bolInclUC && !bolInclNum && !bolInclSpec) {
   window.alert("You must select at least one character type.  Please try again.");
   return;
@@ -105,10 +111,10 @@ if (!bolInclLC && !bolInclUC && !bolInclNum && !bolInclSpec) {
     isOK = true;  //now know ok to run generator below  
 }
 
-// Passed all validations so display generated password
+// Passed all validations so generat password
  if (isOK){ 
-  //generate the password before writing it
-   let finalString = "";  //now figure out the string set to use from the 4 constant choices based on boolean values
+ //figure out the string source to use from the 4 constant choices based on user input
+   let finalString = ""; 
    if (bolInclLC) {
     finalString = txtAlphaLC;
    }    
@@ -122,6 +128,7 @@ if (!bolInclLC && !bolInclUC && !bolInclNum && !bolInclSpec) {
     finalString += txtSpecial;
    } 
 
+   // use random function and string source and pw length entered to generate random string for pw
    for (let i = 1; i <= pwLen; i++) {
     // console.log("this is for loop" + i);
     var char = Math.floor(Math.random() * finalString.length + 1);
@@ -131,15 +138,13 @@ if (!bolInclLC && !bolInclUC && !bolInclNum && !bolInclSpec) {
     // console.log(pwText);
  }
   // console.log(pwText);
- return pwText;
-
- } else {
+    return pwText;  //function returns generated password 
+     
+  } else {
   return;
  }
 
 };  //end to var genPassword = function() at top of code
-
-//end Alexis code
 
 //below is included starter code
 // Get references to the #generate element
@@ -150,7 +155,6 @@ function writePassword() {
   var password = generatePassword();
   console.log(password);
   var passwordText = document.querySelector("#password") 
-  //+ "\nThank you for using my password generator!";
 
   passwordText.value = password;
 
