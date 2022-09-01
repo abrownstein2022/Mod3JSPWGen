@@ -54,7 +54,7 @@ I used the VS Code software to edit code, git to pull the starter code to my loc
 ## Usage
 
 Here's a link to my website stored in GitHub:
-https://github.com/abrownstein2022/Mod3JSPWGen.git
+https://abrownstein2022.github.io/Mod3JSPWGen/
 
 The following image shows the web application's appearance and functionality:
     
